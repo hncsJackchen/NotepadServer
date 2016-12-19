@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper  3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.jack.notepad.inter.IUser">
+
+    <resultMap type="User" id="resultListUser">
+        <id column="id" property="id" jdbcType="INTEGER"/>
+        <result column="u_id" property="uid" jdbcType="INTEGER"/>
+        <result column="u_name" property="userName" jdbcType="VARCHAR"/>
+        <result column="u_password" property="password" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <select id="selectUserByID" parameterType="int" resultMap="resultListUser">
+        select * from user where u_id=#{id} limit 1
+    </select>
+
+    <select id="selectUser" parameterType="string" resultMap="resultListUser">
+        select * from user where u_name=#{userName} limit 1
+    </select>
+
+    <select id="selectUser2" parameterType="User" resultMap="resultListUser">
+        SELECT * FROM user WHERE u_name=#{userName}and u_password=#{password} limit 1
+    </select>
+
+    <!-- 返回list 的select 语句，注意 resultMap 的值是指向前面定义好的 -->
+    <select id="selectUsers" parameterType="string" resultMap="resultListUser">
+        select * from user where u_name like #{userName}
+    </select>
+
+    <insert id="addUser" parameterType="User" useGeneratedKeys="true" keyProperty="id">
+        insert into user(u_id,u_name,u_password) values(#{uid},#{userName},#{password})
+    </insert>
+
+    <update id="updateUser" parameterType="User">
+        update user set u_id=#{uid},u_name=#{userName},u_password=#{password} where id=#{id}
+    </update>
+
+    <delete id="deleteUser" parameterType="int">
+        delete from user where id=#{id}
+    </delete>
+
+
+</mapper>
