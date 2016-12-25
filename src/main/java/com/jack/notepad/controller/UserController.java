@@ -5,6 +5,7 @@ import com.jack.notepad.bean.User;
 import com.jack.notepad.dao.UserDao;
 import com.jack.notepad.response.Response;
 import com.jack.notepad.service.UserService;
+import com.jack.notepad.utils.Log;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,7 +17,7 @@ import java.util.Random;
 
 /**
  * Created by Administrator on 2016/11/19.
- * 用户控制器类
+ * 用户控制器
  */
 @RestController
 @RequestMapping("/user")
@@ -32,7 +33,7 @@ public class UserController {
      * @param password 密码
      * @return
      */
-    @RequestMapping(value = "/register", method = RequestMethod.GET)
+    @RequestMapping(value = "/register")
     public String register(String userName, String password) {
         //参数是否合法
         if (userName == null || userName.equals("")) {
@@ -64,7 +65,7 @@ public class UserController {
      *
      * @return
      */
-    @RequestMapping(value = "/login", method = RequestMethod.GET)
+    @RequestMapping(value = "/login")
     public String login(String userName, String password) {
         //参数是否合法
         if (userName == null || userName.equals("")) {

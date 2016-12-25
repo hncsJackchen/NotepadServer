@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper  3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.jack.notepad.inter.INotepad">
+
+    <resultMap type="Notepad" id="resultListNotepad">
+        <id column="id" property="id" jdbcType="INTEGER"/>
+        <result column="create_u_id" property="uid" jdbcType="INTEGER"/>
+        <result column="create_time" property="createTime" jdbcType="INTEGER"/>
+        <result column="title" property="title" jdbcType="VARCHAR"/>
+        <result column="content" property="content" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <insert id="addNotepad" parameterType="Notepad" useGeneratedKeys="true" keyProperty="id">
+        insert into notepad(create_u_id,create_time,title,content) values(#{uid},#{createTime},#{title},#{content})
+    </insert>
+
+    <select id="getNotepadList" parameterType="int" resultMap="resultListNotepad">
+        select * from notepad where create_u_id=#{userName}
+    </select>
+
+
+</mapper>

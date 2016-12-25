@@ -12,4 +12,5 @@ public class Log {
     public static void e(String info) {
         System.err.println(info);
     }
+
 }

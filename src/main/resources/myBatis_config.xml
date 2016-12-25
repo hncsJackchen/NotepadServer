@@ -6,6 +6,7 @@
 
     <typeAliases>
         <typeAlias alias="User" type="com.jack.notepad.bean.User"/>
+        <typeAlias alias="Notepad" type="com.jack.notepad.bean.Notepad"/>
     </typeAliases>
 
     <environments default="development">
@@ -28,6 +29,7 @@
     <!--名字不区分大小写-->
     <mappers>
         <mapper resource="mapper/User.xml"/>
+        <mapper resource="mapper/Notepad.xml"/>
     </mappers>
 
 </configuration>
