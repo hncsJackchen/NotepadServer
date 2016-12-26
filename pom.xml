@@ -41,9 +41,16 @@
             <version>3.0</version>
         </dependency>
 
+        <!--编写网页工具之FreeMarker(Spring官方推荐)-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-freemarker</artifactId>
+        </dependency>
+        <!--编写网页工具之Thymeleaf-->
+        <dependency>
+            <groupId>org.thymeleaf</groupId>
+            <artifactId>thymeleaf</artifactId>
+            <version>3.0.2.RELEASE</version>
         </dependency>
     </dependencies>
 
