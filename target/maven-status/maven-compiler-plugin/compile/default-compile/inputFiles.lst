@@ -13,8 +13,11 @@ D:\DevWorks\Intellij_IDEA\web_src\NotepadServer\src\main\java\com\jack\notepad\u
 D:\DevWorks\Intellij_IDEA\web_src\NotepadServer\src\main\java\com\jack\notepad\dao\UserDao.java
 D:\DevWorks\Intellij_IDEA\web_src\NotepadServer\src\main\java\com\jack\notepad\inter\IUser.java
 D:\DevWorks\Intellij_IDEA\web_src\NotepadServer\src\main\java\com\jack\notepad\service\UserService.java
+D:\DevWorks\Intellij_IDEA\web_src\NotepadServer\src\main\java\com\jack\notepad\quartz\job\DBConnJob.java
 D:\DevWorks\Intellij_IDEA\web_src\NotepadServer\src\main\java\com\jack\notepad\db\MyBatisHelper.java
+D:\DevWorks\Intellij_IDEA\web_src\NotepadServer\src\main\java\com\jack\notepad\quartz\DBConnQuartz.java
 D:\DevWorks\Intellij_IDEA\web_src\NotepadServer\src\main\java\com\jack\notepad\dao\NotepadDao.java
 D:\DevWorks\Intellij_IDEA\web_src\NotepadServer\src\main\java\com\jack\notepad\inter\INotepad.java
 D:\DevWorks\Intellij_IDEA\web_src\NotepadServer\src\main\java\com\jack\notepad\controller\NotepadController.java
 D:\DevWorks\Intellij_IDEA\web_src\NotepadServer\src\main\java\com\jack\notepad\controller_web\HelloController.java
+D:\DevWorks\Intellij_IDEA\web_src\NotepadServer\src\main\java\com\jack\notepad\quartz\QuartzManager.java
