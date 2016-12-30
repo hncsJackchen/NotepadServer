@@ -3,7 +3,7 @@
         PUBLIC "-//mybatis.org//DTD Mapper  3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.jack.notepad.inter.INotepad">
+<mapper namespace="com.jack.notepad.inter.Notepad">
 
     <resultMap type="Notepad" id="resultListNotepad">
         <id column="id" property="id" jdbcType="INTEGER"/>

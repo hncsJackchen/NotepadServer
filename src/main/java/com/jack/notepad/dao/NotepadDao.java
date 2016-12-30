@@ -1,6 +1,5 @@
 package com.jack.notepad.dao;
 
-import com.jack.notepad.bean.Notepad;
 import com.jack.notepad.db.MyBatisHelper;
 import com.jack.notepad.inter.INotepad;
 import com.jack.notepad.utils.Log;
@@ -23,8 +22,8 @@ public class NotepadDao {
      * @param content
      * @return
      */
-    public Notepad addNotepad(int uid,String title,String content) {
-        Notepad notepad = new Notepad();
+    public com.jack.notepad.bean.Notepad addNotepad(int uid, String title, String content) {
+        com.jack.notepad.bean.Notepad notepad = new com.jack.notepad.bean.Notepad();
         notepad.setUid(uid);
         notepad.setTitle(title);
         notepad.setContent(content);
@@ -43,11 +42,11 @@ public class NotepadDao {
      * @param uid
      * @return
      */
-    public List<Notepad> getNotepadList(int uid){
+    public List<com.jack.notepad.bean.Notepad> getNotepadList(int uid){
         Log.i(TAG+"getNotepadList");
         SqlSession session = MyBatisHelper.getSession();
         INotepad mapper = session.getMapper(INotepad.class);
-        List<Notepad> notepadList = mapper.getNotepadList(uid);
+        List<com.jack.notepad.bean.Notepad> notepadList = mapper.getNotepadList(uid);
         session.close();
         Log.i(TAG+"getNotepadList 1");
         return notepadList;

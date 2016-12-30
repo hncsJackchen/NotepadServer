@@ -18,27 +18,48 @@
 
     <!-- Add typical dependencies for a web application -->
     <dependencies>
+        <!--springframework-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+
+        <!--database-->
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <version>5.1.38</version>
         </dependency>
+
+        <!--Mysql / DataSource-->
         <dependency>
-            <groupId>com.alibaba</groupId>
-            <artifactId>fastjson</artifactId>
-            <version>1.2.21</version>
+            <groupId>org.apache.tomcat</groupId>
+            <artifactId>tomcat-jdbc</artifactId>
         </dependency>
 
-        <!--mybatis核心库-->
+        <!--Mybatis-->
+        <dependency>
+            <groupId>org.mybatis</groupId>
+            <artifactId>mybatis-spring</artifactId>
+            <version>1.2.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.mybatis</groupId>
+            <artifactId>mybatis</artifactId>
+            <version>3.4.1</version>
+        </dependency>
+
         <dependency>
             <groupId>org.apache.ibatis</groupId>
             <artifactId>ibatis-core</artifactId>
             <version>3.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.21</version>
         </dependency>
 
         <!--编写网页工具之FreeMarker(Spring官方推荐)-->
@@ -52,6 +73,7 @@
             <artifactId>thymeleaf</artifactId>
             <version>3.0.2.RELEASE</version>
         </dependency>
+
         <!--定时任务-->
         <dependency>
             <groupId>org.quartz-scheduler</groupId>
@@ -62,6 +84,24 @@
             <groupId>org.quartz-scheduler</groupId>
             <artifactId>quartz-jobs</artifactId>
             <version>2.2.1</version>
+        </dependency>
+
+        <!--支持使用 JDBC 访问数据库-->
+        <!--<dependency>-->
+            <!--<groupId>org.springframework.boot</groupId>-->
+            <!--<artifactId>spring-boot-starter-jdbc</artifactId>-->
+        <!--</dependency>-->
+        <!--&lt;!&ndash;添加适用于生产环境的功能，如性能指标和监测等功能。 &ndash;&gt;-->
+        <!--<dependency>-->
+            <!--<groupId>org.springframework.boot</groupId>-->
+            <!--<artifactId>spring-boot-starter-actuator</artifactId>-->
+        <!--</dependency>-->
+
+        <!--Swagger support-->
+        <dependency>
+            <groupId>com.mangofactory</groupId>
+            <artifactId>swagger-springmvc</artifactId>
+            <version>0.9.5</version>
         </dependency>
     </dependencies>
 
@@ -78,6 +118,7 @@
         <repository>
             <id>spring-milestones</id>
             <url>http://repo.spring.io/milestone</url>
+            <!--<url>https://repo.spring.io/libs-release</url>-->
         </repository>
     </repositories>
 
@@ -100,18 +141,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
         </plugins>
-
-        <!--<resources>-->
-            <!--<resource>-->
-                <!--<directory>src/main/java/config</directory>&lt;!&ndash;src/main/java为我们要发布内容的目录。&ndash;&gt;-->
-                <!--<includes>-->
-                    <!--<include>**/*.xml</include>&lt;!&ndash;指定我们发布内容的类型&ndash;&gt;-->
-                <!--</includes>-->
-            <!--</resource>-->
-        <!--</resources>-->
     </build>
-
-
 
 
 </project>

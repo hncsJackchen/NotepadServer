@@ -1,12 +1,11 @@
-#配置文件
+#当前运行环境，dev-开发，prod-生产
 spring:
   profiles:
-    active: prod
+    active: dev
 
-userName: Alex
-bookTitle: Spring Boot入门教程
-
+#网站描述
 Author: Jackchen
 Description: 这是SpringBoot开发的第一个网页！
 
 
+PWD: chenjie

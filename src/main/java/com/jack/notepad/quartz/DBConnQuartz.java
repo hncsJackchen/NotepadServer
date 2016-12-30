@@ -21,7 +21,7 @@ import static org.quartz.TriggerBuilder.newTrigger;
  */
 public class DBConnQuartz {
     private static final long START_TIME_DELAY = TimeUnit.MINUTES.toMillis(5);//开始时间距离启动项目延迟时间(TimeUnit.MINUTES)
-    private static final long INTERVAL = TimeUnit.HOURS.toMillis(1);//任务执行的间隔时间(TimeUnit.HOURS)
+    private static final long INTERVAL = TimeUnit.HOURS.toMillis(4);//任务执行的间隔时间(TimeUnit.HOURS)
 
     public static void start() {
         Log.i("开始定时任务...current time is " + System.currentTimeMillis());

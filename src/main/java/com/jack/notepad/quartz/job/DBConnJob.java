@@ -24,15 +24,15 @@ public class DBConnJob implements Job {
 
     @Override
     public void execute(JobExecutionContext jobExecutionContext) throws JobExecutionException {
-        Log.i(TAG + System.currentTimeMillis() + ":执行数据库连接的任务 ");
+        Log.i(TAG, "执行数据库连接的任务 ");
         SqlSession session = MyBatisHelper.getSession();
         IUser mapper = session.getMapper(IUser.class);
         User user = mapper.selectUser("admin");
         session.close();
         if (user == null) {
-            Log.i(TAG + "admin 用户不存在");
+            Log.i(TAG, "admin 用户不存在");
         } else {
-            Log.i(TAG + "admin 用户存在：" + user);
+            Log.i(TAG, "admin 用户存在：" + user);
         }
     }
 }

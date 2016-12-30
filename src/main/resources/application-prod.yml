@@ -1,7 +1,10 @@
-#Tomcat的配置文件
+#当前配置对应的环境
+Env: PROD
 
+#服务器的端口
 server:
   port: 8080
   context-path:
 
-Env: PROD
+#接口IP地址
+IP: 23.83.233.171
