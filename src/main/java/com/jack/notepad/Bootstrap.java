@@ -5,12 +5,20 @@ import com.mangofactory.swagger.configuration.SpringSwaggerConfig;
 import com.mangofactory.swagger.models.dto.ApiInfo;
 import com.mangofactory.swagger.plugin.EnableSwagger;
 import com.mangofactory.swagger.plugin.SwaggerSpringMvcPlugin;
+import org.apache.ibatis.session.SqlSessionFactory;
+import org.mybatis.spring.SqlSessionFactoryBean;
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.core.io.Resource;
+import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
+
+import javax.sql.DataSource;
 
 /**
  * Created by Administrator on 2016/11/19.
@@ -20,6 +28,7 @@ import org.springframework.context.annotation.ComponentScan;
 @EnableAutoConfiguration
 @SpringBootApplication
 //@MapperScan("com.jack.notepad.inter")
+//@ComponentScan("com.jack.notepad")
 public class Bootstrap {
 //    private static Logger logger = Logger.getLogger(Bootstrap.class);
 
@@ -57,10 +66,12 @@ public class Bootstrap {
         QuartzManager.start();
 
 
-
     }
 
-    /** 配置 swagger开始*/ private SpringSwaggerConfig springSwaggerConfig;
+    /**
+     * 配置 swagger开始
+     */
+    private SpringSwaggerConfig springSwaggerConfig;
 
     /**
      * Required to autowire SpringSwaggerConfig

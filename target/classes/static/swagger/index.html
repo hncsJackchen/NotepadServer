@@ -34,9 +34,11 @@
   <script type="text/javascript">
     $(function () {
       var url = window.location.search.match(/url=([^&]+)/);
-
-      url = "http://localhost:8080/api-docs";
-
+      if (url && url.length > 1) {
+        url = decodeURIComponent(url[1]);
+      } else {
+        url = "http://localhost:8080/api-docs";
+      }
       hljs.configure({
         highlightSizeThreshold: 5000
       });

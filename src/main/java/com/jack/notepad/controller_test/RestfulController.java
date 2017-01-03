@@ -20,8 +20,8 @@ public class RestfulController {
      *
      * @return
      */
-    @ApiOperation(value = "添加用户",httpMethod ="POST", response = User.class,notes = "HelloWorld")
-    @RequestMapping(method = RequestMethod.GET)
+    @ApiOperation(value = "添加用户", httpMethod = "GET", response = User.class, notes = "测试Restful接口，传递一个参数")
+    @RequestMapping(value = "/test0",method = RequestMethod.GET)
     public User test0() {
         User user = new User();
         user.setUid(0);
@@ -36,6 +36,7 @@ public class RestfulController {
      * @param username
      * @return
      */
+    @ApiOperation(value = "查询指定用户", httpMethod = "GET", response = User.class, notes = "测试Restful接口，传递一个参数")
     @RequestMapping(value = "/{username}", method = RequestMethod.GET)
     public User test1(@PathVariable String username) {
         User user = new User();

@@ -6,12 +6,10 @@ import com.jack.notepad.dao.UserDao;
 import com.jack.notepad.response.Response;
 import com.jack.notepad.service.UserService;
 import com.jack.notepad.utils.Log;
+import com.wordnik.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Random;
 
@@ -33,8 +31,9 @@ public class UserController {
      * @param password 密码
      * @return
      */
-    @RequestMapping(value = "/register")
-    public String register(String userName, String password) {
+    @RequestMapping(value = "/register", method = RequestMethod.POST)
+    @ApiOperation(value = "注册", httpMethod = "POST", notes = "注册一个用户")
+    public String register(@RequestParam String userName,@RequestParam String password) {
         //参数是否合法
         if (userName == null || userName.equals("")) {
             return JSON.toJSONString(Response.writeResult(Response.STATUS_ERROR, "用户名不能为空", null));
@@ -66,7 +65,9 @@ public class UserController {
      * @return
      */
     @RequestMapping(value = "/login")
-    public String login(String userName, String password) {
+    @ApiOperation(value = "登录", httpMethod = "POST", notes = "用户登录")
+    @ResponseBody
+    public String login(@RequestParam String userName,@RequestParam String password) {
         //参数是否合法
         if (userName == null || userName.equals("")) {
             return JSON.toJSONString(Response.writeResult(Response.STATUS_ERROR, "用户名不能为空", null));
@@ -81,7 +82,6 @@ public class UserController {
         }
         return JSON.toJSONString(Response.writeResult(Response.STATUS_SUCCESS, "登录成功", user));
     }
-
 
 
 }

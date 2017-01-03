@@ -6,13 +6,14 @@ import com.jack.notepad.inter.IUser;
 import com.jack.notepad.utils.Log;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
 /**
  * Created by Administrator on 2016/12/12.
  */
-@Component
+@Repository
 public class UserDao {
     private static final String TAG = "UserDao ";
 
