@@ -1,6 +1,8 @@
 package com.jack.notepad;
 
+import com.jack.notepad.filter.HTTPBasicAuthorizeAttribute;
 import com.jack.notepad.quartz.QuartzManager;
+import com.jack.notepad.utils.Log;
 import com.mangofactory.swagger.configuration.SpringSwaggerConfig;
 import com.mangofactory.swagger.models.dto.ApiInfo;
 import com.mangofactory.swagger.plugin.EnableSwagger;
@@ -13,12 +15,15 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 
 import javax.sql.DataSource;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Administrator on 2016/11/19.
@@ -103,6 +108,21 @@ public class Bootstrap {
         return apiInfo;
     }
     /** 配置 swagger结束*/
+
+
+    @Bean
+    public FilterRegistrationBean filterRegistrationBean(){
+        FilterRegistrationBean bean = new FilterRegistrationBean();
+        Log.i("FilterRegistrationBean...");
+        HTTPBasicAuthorizeAttribute basicAuthorizeAttribute = new HTTPBasicAuthorizeAttribute();
+        bean.setFilter(basicAuthorizeAttribute);
+
+        List<String> urlPatterns = new ArrayList<String>();
+        urlPatterns.add("/test1/*");
+        bean.setUrlPatterns(urlPatterns);
+
+        return bean;
+    }
 
 
 }
