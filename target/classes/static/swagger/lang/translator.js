@@ -23,7 +23,6 @@ window.SwaggerTranslator = {
 
       $(sel).each(function() {
         $(this).html($this._tryTranslate($(this).html()));
-
         $(this).val($this._tryTranslate($(this).val()));
         $(this).attr('title', $this._tryTranslate($(this).attr('title')));
       });

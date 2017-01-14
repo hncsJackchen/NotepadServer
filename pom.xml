@@ -96,6 +96,7 @@
             <artifactId>quartz-jobs</artifactId>
             <version>2.2.1</version>
         </dependency>
+
         <!--Swagger support-->
         <dependency>
             <groupId>com.mangofactory</groupId>
@@ -111,6 +112,30 @@
             <!--<type>jar</type>-->
             <!--<scope>compile</scope>-->
         </dependency>
+        <!--日志-->
+        <!--
+            slf4j:规范、接口
+            log4j/logback：实现
+            使用slf4j+logback组合
+        -->
+        <!--<dependency>-->
+            <!--<groupId>org.slf4j</groupId>-->
+            <!--<artifactId>slf4j-api</artifactId>-->
+            <!--<version>1.7.12</version>-->
+        <!--</dependency>-->
+
+        <!--<dependency>-->
+            <!--<groupId>ch.qos.logback</groupId>-->
+            <!--<artifactId>logback-core</artifactId>-->
+            <!--<version>1.1.1</version>-->
+        <!--</dependency>-->
+
+        <!--<dependency>-->
+            <!--<groupId>ch.qos.logback</groupId>-->
+            <!--<artifactId>logback-classic</artifactId>-->
+            <!--<version>1.1.1</version>-->
+        <!--</dependency>-->
+
 
     </dependencies>
 

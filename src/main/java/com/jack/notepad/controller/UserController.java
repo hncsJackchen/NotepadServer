@@ -2,13 +2,11 @@ package com.jack.notepad.controller;
 
 import com.alibaba.fastjson.JSON;
 import com.jack.notepad.bean.User;
-import com.jack.notepad.dao.UserDao;
 import com.jack.notepad.response.Response;
-import com.jack.notepad.service.UserService;
-import com.jack.notepad.utils.Log;
+import com.jack.notepad.service.impl.UserServiceImpl;
+import com.jack.notepad.utils.CommUtils;
 import com.wordnik.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Random;
@@ -22,7 +20,7 @@ import java.util.Random;
 public class UserController {
 
     @Autowired
-    UserService userService;
+    UserServiceImpl userServiceImpl;
 
     /**
      * 注册
@@ -35,14 +33,14 @@ public class UserController {
     @ApiOperation(value = "注册", httpMethod = "POST", notes = "注册一个用户")
     public String register(@RequestParam String userName,@RequestParam String password) {
         //参数是否合法
-        if (userName == null || userName.equals("")) {
+        if (CommUtils.isBlank(userName)) {
             return JSON.toJSONString(Response.writeResult(Response.STATUS_ERROR, "用户名不能为空", null));
         }
-        if (password == null || password.equals("")) {
+        if (CommUtils.isBlank(password)) {
             return JSON.toJSONString(Response.writeResult(Response.STATUS_ERROR, "密码不能为空", null));
         }
         //参数是否符合系统要求
-        User user1 = userService.queryUser(userName);
+        User user1 = userServiceImpl.queryUser(userName);
         if (user1 != null) {
             return JSON.toJSONString(Response.writeResult(Response.STATUS_ERROR, "用户名已经存在", null));
         }
@@ -52,7 +50,7 @@ public class UserController {
         int uid = random.nextInt(10000);
 
         //返回结果
-        User user = userService.insertUser(uid, userName, password);
+        User user = userServiceImpl.insertUser(uid, userName, password);
         if (user == null) {
             return JSON.toJSONString(Response.writeResult(Response.STATUS_ERROR, "注册错误", null));
         }
@@ -69,14 +67,14 @@ public class UserController {
     @ResponseBody
     public String login(@RequestParam String userName,@RequestParam String password) {
         //参数是否合法
-        if (userName == null || userName.equals("")) {
+        if (CommUtils.isBlank(userName)) {
             return JSON.toJSONString(Response.writeResult(Response.STATUS_ERROR, "用户名不能为空", null));
         }
-        if (password == null || password.equals("")) {
+        if (CommUtils.isBlank(password)) {
             return JSON.toJSONString(Response.writeResult(Response.STATUS_ERROR, "密码不能为空", null));
         }
 
-        User user = userService.queryUser(userName, password);
+        User user = userServiceImpl.queryUser(userName, password);
         if (user == null) {
             return JSON.toJSONString(Response.writeResult(Response.STATUS_ERROR, "登录账号或密码错误", null));
         }

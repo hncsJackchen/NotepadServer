@@ -3,7 +3,7 @@ package com.jack.notepad.controller;
 import com.alibaba.fastjson.JSON;
 import com.jack.notepad.bean.Notepad;
 import com.jack.notepad.response.Response;
-import com.jack.notepad.service.NotepadService;
+import com.jack.notepad.service.impl.NotepadServiceImpl;
 import com.jack.notepad.utils.CommUtils;
 import com.jack.notepad.utils.Log;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -55,7 +55,7 @@ public class NotepadController {
     }
 
     @Autowired
-    NotepadService notepadService;
+    NotepadServiceImpl notepadService;
 
     /**
      * 获取列表
