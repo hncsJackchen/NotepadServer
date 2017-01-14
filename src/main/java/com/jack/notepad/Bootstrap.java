@@ -99,8 +99,8 @@ public class Bootstrap {
 
     private ApiInfo apiInfo() {
         ApiInfo apiInfo = new ApiInfo(
-                "测试接口文档(标题)", // App Service API
-                "这是一个描述信息。。。",
+                "《接口文档》", // App Service API
+                "base url [http://23.83.233.171:8080]",
                 "termsOfServiceUrl",
                 "younaame@yourmail.com",
                 "2222222222222222222222222222",

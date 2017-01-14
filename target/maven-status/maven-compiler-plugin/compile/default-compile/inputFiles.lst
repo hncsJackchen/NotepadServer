@@ -1,5 +1,4 @@
 D:\DevWorks\Intellij_IDEA\web_src\NotepadServer\src\main\java\com\jack\notepad\service\INotepadService.java
-D:\DevWorks\Intellij_IDEA\web_src\NotepadServer\src\main\java\com\jack\notepad\controller_test\TemplateController.java
 D:\DevWorks\Intellij_IDEA\web_src\NotepadServer\src\main\java\com\jack\notepad\controller_test\JsonController.java
 D:\DevWorks\Intellij_IDEA\web_src\NotepadServer\src\main\java\com\jack\notepad\response\Response.java
 D:\DevWorks\Intellij_IDEA\web_src\NotepadServer\src\main\java\com\jack\notepad\bean\Notepad.java
@@ -24,6 +23,7 @@ D:\DevWorks\Intellij_IDEA\web_src\NotepadServer\src\main\java\com\jack\notepad\c
 D:\DevWorks\Intellij_IDEA\web_src\NotepadServer\src\main\java\com\jack\notepad\exception\LoginInfoErrorException.java
 D:\DevWorks\Intellij_IDEA\web_src\NotepadServer\src\main\java\com\jack\notepad\dao\UserDao.java
 D:\DevWorks\Intellij_IDEA\web_src\NotepadServer\src\main\java\com\jack\notepad\quartz\job\DBConnJob.java
+D:\DevWorks\Intellij_IDEA\web_src\NotepadServer\src\main\java\com\jack\notepad\controller\IndexController.java
 D:\DevWorks\Intellij_IDEA\web_src\NotepadServer\src\main\java\com\jack\notepad\exception\UserException.java
 D:\DevWorks\Intellij_IDEA\web_src\NotepadServer\src\main\java\com\jack\notepad\controller\NotepadController.java
 D:\DevWorks\Intellij_IDEA\web_src\NotepadServer\src\main\java\com\jack\notepad\quartz\QuartzManager.java

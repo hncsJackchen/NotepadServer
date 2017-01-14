@@ -1,7 +1,7 @@
 #当前运行环境，dev-开发，prod-生产
 spring:
   profiles:
-    active: dev
+    active: prod
 
 #网站描述
 Author: Jackchen
